@@ -86,7 +86,10 @@ function SnakeController ($scope, $rootScope) {
 	}
 }
 
-/*global window, document, _, $*/
+// Get the image:
+var appleImage = new Image();
+appleImage.src = 'http://us.123rf.com/400wm/400/400/rphotos/rphotos0801/rphotos080100200/2498229-red-delicious-apple.jpg';
+
 var snakeWidth = 20;
 var canvasWidth = $('.span8').width();
 var canvasHeight = Math.floor(canvasWidth / (1.618*snakeWidth)) * snakeWidth;
@@ -117,8 +120,7 @@ var drawSnake = function drawSnake() {
 };
 
 var drawDot = function drawDot () {
-	canvasContext.fillStyle   = '#f00';
-	canvasContext.fillRect(dot.x,dot.y,snakeWidth,snakeWidth);
+	canvasContext.drawImage(appleImage, dot.x,dot.y,snakeWidth,snakeWidth);
 };
 
 
