@@ -92,7 +92,7 @@ var canvasWidth = $('.span8').width();
 var canvasHeight = Math.floor(canvasWidth / (1.618*snakeWidth)) * snakeWidth;
 
 var img = new Image();
-img.src = 'http://us.123rf.com/400wm/400/400/rphotos/rphotos0801/rphotos080100200/2498229-red-delicious-apple.jpg';
+img.src = 'https://a248.e.akamai.net/camo.github.com/f7df2e3df20efc071b6d4a1639014b2d859c0324/687474703a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f302f30362f5265645f6170706c652e7376672f32303070782d5265645f6170706c652e7376672e706e67';
 img.height = snakeWidth;
 img.width = snakeWidth;
 
