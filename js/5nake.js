@@ -86,10 +86,18 @@ function SnakeController ($scope, $rootScope) {
 	}
 }
 
-/*global window, document, _, $*/
+// Get the image:
+var appleImage = new Image();
+appleImage.src = 'img/apple_20x20.png';
+
 var snakeWidth = 20;
 var canvasWidth = $('.span8').width();
 var canvasHeight = Math.floor(canvasWidth / (1.618*snakeWidth)) * snakeWidth;
+
+var img = new Image();
+img.src = 'https://a248.e.akamai.net/camo.github.com/f7df2e3df20efc071b6d4a1639014b2d859c0324/687474703a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f302f30362f5265645f6170706c652e7376672f32303070782d5265645f6170706c652e7376672e706e67';
+img.height = snakeWidth;
+img.width = snakeWidth;
 
 // Embiggen the canvas:
 $('#canvas').attr('width', canvasWidth + 'px');
@@ -109,6 +117,13 @@ var randomiseDot = function () {
 };
 var dot = randomiseDot();
 
+var drawDot = function drawDot () {
+   img.onload = function(){
+         canvasContext.drawImage(img,dot.x,dot.x);
+      }
+  };
+
+
 var drawSnake = function drawSnake() {
 	canvasContext.fillStyle   = '#00f';
 	for(var i = 0; i < snake.length; i++) {
@@ -117,8 +132,7 @@ var drawSnake = function drawSnake() {
 };
 
 var drawDot = function drawDot () {
-	canvasContext.fillStyle   = '#f00';
-	canvasContext.fillRect(dot.x,dot.y,snakeWidth,snakeWidth);
+	canvasContext.drawImage(appleImage, dot.x,dot.y,snakeWidth,snakeWidth);
 };
 
 
