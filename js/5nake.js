@@ -91,6 +91,11 @@ var snakeWidth = 20;
 var canvasWidth = $('.span8').width();
 var canvasHeight = Math.floor(canvasWidth / (1.618*snakeWidth)) * snakeWidth;
 
+var img = new Image();
+img.src = 'http://us.123rf.com/400wm/400/400/rphotos/rphotos0801/rphotos080100200/2498229-red-delicious-apple.jpg';
+img.height = snakeWidth;
+img.width = snakeWidth;
+
 // Embiggen the canvas:
 $('#canvas').attr('width', canvasWidth + 'px');
 $('#canvas').attr('height', canvasHeight + 'px');
@@ -108,6 +113,13 @@ var randomiseDot = function () {
 	};
 };
 var dot = randomiseDot();
+
+var drawDot = function drawDot () {
+   img.onload = function(){
+         canvasContext.drawImage(img,dot.x,dot.x);
+      }
+  };
+
 
 var drawSnake = function drawSnake() {
 	canvasContext.fillStyle   = '#00f';
