@@ -86,7 +86,10 @@ function SnakeController ($scope, $rootScope) {
 	}
 }
 
-/*global window, document, _, $*/
+// Get the image:
+var appleImage = new Image();
+appleImage.src = 'img/apple_20x20.png';
+
 var snakeWidth = 20;
 var canvasWidth = $('.span8').width();
 var canvasHeight = Math.floor(canvasWidth / (1.618*snakeWidth)) * snakeWidth;
@@ -129,8 +132,7 @@ var drawSnake = function drawSnake() {
 };
 
 var drawDot = function drawDot () {
-	canvasContext.fillStyle   = '#f00';
-	canvasContext.fillRect(dot.x,dot.y,snakeWidth,snakeWidth);
+	canvasContext.drawImage(appleImage, dot.x,dot.y,snakeWidth,snakeWidth);
 };
 
 
