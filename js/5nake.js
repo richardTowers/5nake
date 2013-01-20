@@ -88,7 +88,7 @@ function SnakeController ($scope, $rootScope) {
 
 // Get the image:
 var appleImage = new Image();
-appleImage.src = 'http://us.123rf.com/400wm/400/400/rphotos/rphotos0801/rphotos080100200/2498229-red-delicious-apple.jpg';
+appleImage.src = 'img/apple_20x20.png';
 
 var snakeWidth = 20;
 var canvasWidth = $('.span8').width();
