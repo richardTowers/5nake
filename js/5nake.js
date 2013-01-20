@@ -152,4 +152,5 @@ $(document).keydown(function (event) {
 			}
 			break;
 	}
+	event.preventDefault();
 });
