@@ -135,22 +135,25 @@ $(document).keydown(function (event) {
 			if(currentDirection !== 'right') {
 				newDirection = 'left';
 			}
+			event.preventDefault();
 			break;
 		case 38:
 			if(currentDirection !== 'down') {
 				newDirection = 'up';
 			}
+			event.preventDefault();
 			break;
 		case 39:
 			if(currentDirection !== 'left') {
 				newDirection = 'right';
 			}
+			event.preventDefault();
 			break;
 		case 40:
 			if(currentDirection !== 'up') {
 				newDirection = 'down';
 			}
+			event.preventDefault();
 			break;
 	}
-	event.preventDefault();
 });
