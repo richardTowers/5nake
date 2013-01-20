@@ -30,6 +30,8 @@ function SnakeController ($scope, $rootScope) {
 	$scope.started = false;
 	$scope.start = function () {
 		$scope.started = true;
+		newDirection = 'right';
+		snake = [{x: 0, y: 0}, {x: snakeWidth, y: 0}, {x: snakeWidth*2, y: 0}, {x: snakeWidth*3, y: 0}];
 		if(interval) {
 			clearInterval(interval);
 		}
@@ -75,6 +77,7 @@ function SnakeController ($scope, $rootScope) {
 				window.clearInterval(interval);
 				$scope.started = false;
 				$('#failModal').modal({keyboard: false});
+				$scope.$apply();
 			}
 			else {
 				snake.push(newSegment);
