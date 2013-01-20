@@ -40,7 +40,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr ng-repeat="highScore in highScores | orderBy:'-score'">
+								<tr ng-repeat="highScore in highScores | orderBy:'-score' | limitTo: 20">
 									<td>{{highScore.name}}</td>
 									<td>{{highScore.score}}</td>
 								</tr>
