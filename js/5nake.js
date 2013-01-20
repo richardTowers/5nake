@@ -114,7 +114,8 @@ var drawSnake = function drawSnake() {
 };
 
 var drawDot = function drawDot () {
-	canvasContext.fillStyle   = '#f00';
+	var src = "http://us.123rf.com/400wm/400/400/rphotos/rphotos0801/rphotos080100200/2498229-red-delicious-apple.jpg"
+	canvasContext.fillStyle   = src;
 	canvasContext.fillRect(dot.x,dot.y,snakeWidth,snakeWidth);
 };
 
